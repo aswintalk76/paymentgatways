@@ -1,0 +1,1058 @@
+
+
+<html>
+    <head>
+    
+   
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+     <style>
+     .box
+     {
+      width:100%;
+      margin:0 auto;
+     }
+     .active_tab1
+     {
+      background-color:#fff;
+      color:#333;
+      font-weight: 600;
+     }
+     .inactive_tab1
+     {
+      background-color: #f5f5f5;
+      color: #333;
+      cursor: not-allowed;
+     }
+     .has-error
+     {
+      border-color:#cc0000;
+      background-color:#ffff99;
+     }
+     </style>
+    </head>
+    <body>
+   
+    <!-- Button trigger modal -->
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+     Launch demo modal
+   </button>
+   
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+         <br />
+     <div class="container box">
+      <br />
+      <h2 align="center">Create Account</h2><br />
+     
+      <form method="post" id="register_form">
+       <ul class="nav nav-tabs">
+        <li class="nav-item">
+         <a class="nav-link active_tab1" style="border:1px solid #ccc" id="list_login_details">Step 1:: <br>Addresses</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link inactive_tab1" id="list_personal_details" style="border:1px solid #ccc">Step 2:: <br>Business Details
+   </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link inactive_tab1" id="list_contact_details" style="border:1px solid #ccc">Step 3: <br> Contact Info</a>
+        </li>
+   
+        <li class="nav-item">
+         <a class="nav-link inactive_tab1" style="border:1px solid #ccc" id="list_login_details_test">Step 4:: <br>Addresses</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link inactive_tab1" id="list_personal_details_test" style="border:1px solid #ccc">Step 5:: <br>Business Details
+   </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link inactive_tab1" id="list_contact_details_test" style="border:1px solid #ccc">Step 6: <br> Contact Info</a>
+        </li>
+       </ul>
+       <div class="tab-content" style="margin-top:16px;">
+        <div class="tab-pane active" id="login_details">
+         <div class="panel panel-default">
+          <div class="panel-heading">Step 1:: Addresses</div>
+          <div class="panel-body">
+           <div class="form-group">
+           <label>Address Name</label>
+            <input type="text" name="business_address_name" id="business_address_name" class="form-control" />
+            <span id="error_business_address_name" class="text-danger"></span>
+           </div>
+           <div class="form-group">
+            <label>Street Address</label>
+            <input type="text" name="business_street_address" id="business_street_address" class="form-control" />
+            <span id="error_business_street_address" class="text-danger"></span>
+           </div>
+           
+           <div class="form-group">
+            <label>Street Address New</label>
+            <input type="text" name="business_street_address_new" id="business_street_address_new" class="form-control" />
+            <span id="error_business_street_address_new" class="text-danger"></span>
+           </div>
+           
+           <div class="form-group">
+            <label>City</label>
+            <input type="text" name="business_city" id="business_city" class="form-control" />
+            <span id="error_business_city" class="text-danger"></span>
+           </div>
+           
+           <div class="form-group">
+            <label>Business State</label>
+            <input type="text" name="business_state" id="business_state" class="form-control" />
+            <span id="error_business_state" class="text-danger"></span>
+           </div>
+          
+           <div class="form-group">
+            <label>Zip</label>
+            <input type="text" name="business_zip" id="business_zip" class="form-control" />
+            <span id="error_business_zip" class="text-danger"></span>
+           </div>
+          
+           <div class="form-group">
+            <label>Country</label>
+            <input type="text" name="business_country" id="business_country" class="form-control" />
+            <span id="error_business_country" class="text-danger"></span>
+           </div>
+           <br />
+           <div align="center">
+            <button type="button" name="btn_login_details" id="btn_login_details" class="btn btn-info btn-lg">Next</button>
+           </div>
+           <br />
+          </div>
+         </div>
+        </div>
+        <div class="tab-pane fade" id="personal_details">
+         <div class="panel panel-default">
+          <div class="panel-heading">Second Step</div>
+          <div class="panel-body">
+   
+          
+          
+          <div class="form-group">
+           <label>business_additional_usage</label>
+            <input type="text" name="business_additional_usage" id="business_additional_usage" class="form-control" />
+            <span id="error_business_additional_usage" class="text-danger"></span>
+           </div>
+       
+         
+           <div class="form-group">
+            <label>business_business_type</label>
+            <input type="text" name="business_business_type" id="business_business_type" class="form-control" />
+            <span id="error_business_business_type" class="text-danger"></span>
+           </div>
+           
+           <div class="form-group">
+            <label>business_naics_sector</label>
+            <input type="text" name="business_naics_sector" id="business_naics_sector" class="form-control" />
+            <span id="business_naics_sector" class="text-danger"></span>
+           </div>
+           
+          
+           <div class="form-group">
+            <label>business_naics_category</label>
+            <input type="text" name="business_naics_category" id="business_naics_category" class="form-control" />
+            <span id="error_business_naics_category" class="text-danger"></span>
+           </div>
+           
+           <div class="form-group">
+            <label>business_classification</label>
+            <input type="text" name="business_classification" id="business_classification" class="form-control" />
+            <span id="error_business_classification" class="text-danger"></span>
+           </div>
+          
+           <div class="form-group">
+            <label>business_time_zone</label>
+            <input type="text" name="business_time_zone" id="business_time_zone" class="form-control" />
+            <span id="error_business_time_zone" class="text-danger"></span>
+           </div>
+          
+         
+           <br />
+         
+           <div align="center">
+            <button type="button" name="previous_btn_personal_details" id="previous_btn_personal_details" class="btn btn-default btn-lg">Previous</button>
+            <button type="button" name="btn_personal_details" id="btn_personal_details" class="btn btn-info btn-lg">Next</button>
+           </div>
+           <br />
+          </div>
+         </div>
+        </div>
+        <div class="tab-pane fade" id="contact_details">
+         <div class="panel panel-default">
+          <div class="panel-heading">Step 3: Contact Info</div>
+          <div class="panel-body">
+           
+   
+         
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="business_first_name" id="business_first_name" class="form-control" />
+            <span id="error_business_first_name" class="text-danger"></span>
+           </div>
+   
+          
+          <div class="form-group">
+            <label>Middle Name</label>
+            <input type="text" name="business_middle_name" id="business_middle_name" class="form-control" />
+            <span id="error_business_middle_name" class="text-danger"></span>
+           </div>
+   
+   
+        
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="business_last_name" id="business_last_name" class="form-control" />
+            <span id="error_business_last_name" class="text-danger"></span>
+           </div>
+   
+   
+          
+           
+           <div class="form-group">
+            <label>Phone</label>
+            <input type="text" name="business_phone" id="business_phone" class="form-control" />
+            <span id="error_business_phone" class="text-danger"></span>
+           </div>
+   
+           <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="business_email" id="business_email" class="form-control" />
+            <span id="error_business_email" class="text-danger"></span>
+           </div>
+           <br />
+           <div align="center">
+            
+            <button type="button" name="previous_btn_contact_details" id="previous_btn_contact_details" class="btn btn-default btn-lg">Previous</button>
+            <button type="button" name="btn_contact_details" id="btn_contact_details" class="btn btn-success btn-lg">Next</button>
+           </div>
+           <br />
+          </div>
+         </div>
+        </div>
+
+        <!--testjghjgjhgjhvnhv-->
+       
+        <div class="tab-pane fade" id="login_details_test">
+          <div class="panel panel-default">
+           <div class="panel-heading">Step 1:: Addresses</div>
+           <div class="panel-body">
+            <div class="form-group">
+            <label>Address Name</label>
+             <input type="text" name="business_address_name" id="business_address_name" class="form-control" />
+             <span id="error_business_address_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+             <label>Street Address</label>
+             <input type="text" name="business_street_address" id="business_street_address" class="form-control" />
+             <span id="error_business_street_address" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+             <label>Street Address New</label>
+             <input type="text" name="business_street_address_new" id="business_street_address_new" class="form-control" />
+             <span id="error_business_street_address_new" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+             <label>City</label>
+             <input type="text" name="business_city" id="business_city" class="form-control" />
+             <span id="error_business_city" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+             <label>Business State</label>
+             <input type="text" name="business_state" id="business_state" class="form-control" />
+             <span id="error_business_state" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+             <label>Zip</label>
+             <input type="text" name="business_zip" id="business_zip" class="form-control" />
+             <span id="error_business_zip" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+             <label>Country</label>
+             <input type="text" name="business_country" id="business_country" class="form-control" />
+             <span id="error_business_country" class="text-danger"></span>
+            </div>
+            <br />
+            <div align="center">
+              <button type="button" name="previous_btn_login_details_test" id="previous_btn_login_details_test" class="btn btn-default btn-lg">Previous</button>
+                       
+             <button type="button" name="btn_login_details_test" id="btn_login_details_test" class="btn btn-info btn-lg">Next</button>
+            </div>
+            <br />
+           </div>
+          </div>
+         </div>
+         <div class="tab-pane fade" id="personal_details_test">
+          <div class="panel panel-default">
+           <div class="panel-heading">Second Step</div>
+           <div class="panel-body">
+    
+           
+           
+           <div class="form-group">
+            <label>business_additional_usage</label>
+             <input type="text" name="business_additional_usage" id="business_additional_usage" class="form-control" />
+             <span id="error_business_additional_usage" class="text-danger"></span>
+            </div>
+        
+          
+            <div class="form-group">
+             <label>business_business_type</label>
+             <input type="text" name="business_business_type" id="business_business_type" class="form-control" />
+             <span id="error_business_business_type" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+             <label>business_naics_sector</label>
+             <input type="text" name="business_naics_sector" id="business_naics_sector" class="form-control" />
+             <span id="business_naics_sector" class="text-danger"></span>
+            </div>
+            
+           
+            <div class="form-group">
+             <label>business_naics_category</label>
+             <input type="text" name="business_naics_category" id="business_naics_category" class="form-control" />
+             <span id="error_business_naics_category" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+             <label>business_classification</label>
+             <input type="text" name="business_classification" id="business_classification" class="form-control" />
+             <span id="error_business_classification" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+             <label>business_time_zone</label>
+             <input type="text" name="business_time_zone" id="business_time_zone" class="form-control" />
+             <span id="error_business_time_zone" class="text-danger"></span>
+            </div>
+           
+          
+            <br />
+          
+            <div align="center">
+             <button type="button" name="previous_btn_personal_details_test" id="previous_btn_personal_details_test" class="btn btn-default btn-lg">Previous</button>
+             <button type="button" name="btn_personal_details_test" id="btn_personal_details_test" class="btn btn-info btn-lg">Next</button>
+            </div>
+            <br />
+           </div>
+          </div>
+         </div>
+
+        <div class="tab-pane fade" id="contact_details_test">
+          <div class="panel panel-default">
+           <div class="panel-heading">Step last: Contact Info</div>
+           <div class="panel-body">
+            
+    
+          
+           <div class="form-group">
+             <label>First Name</label>
+             <input type="text" name="business_first_name" id="business_first_name" class="form-control" />
+             <span id="error_business_first_name" class="text-danger"></span>
+            </div>
+    
+           
+           <div class="form-group">
+             <label>Middle Name</label>
+             <input type="text" name="business_middle_name" id="business_middle_name" class="form-control" />
+             <span id="error_business_middle_name" class="text-danger"></span>
+            </div>
+    
+    
+         
+           <div class="form-group">
+             <label>Last Name</label>
+             <input type="text" name="business_last_name" id="business_last_name" class="form-control" />
+             <span id="error_business_last_name" class="text-danger"></span>
+            </div>
+    
+    
+           
+            
+            <div class="form-group">
+             <label>Phone</label>
+             <input type="text" name="business_phone" id="business_phone" class="form-control" />
+             <span id="error_business_phone" class="text-danger"></span>
+            </div>
+    
+            <div class="form-group">
+             <label>Email</label>
+             <input type="text" name="business_email" id="business_email" class="form-control" />
+             <span id="error_business_email" class="text-danger"></span>
+            </div>
+            <br />
+            <div align="center">
+             
+             <button type="button" name="btn_contact_details_test" id="btn_contact_details_test" class="btn btn-success btn-lg">Register</button>
+            </div>
+            <br />
+           </div>
+          </div>
+         </div>
+        <!--gjhvjhvgjhgjgjgvbnvbnvhvh-->
+       </div>
+      </form>
+     </div>
+        
+     </div>
+   </div>
+   
+    
+    </body>
+   </html>
+   
+   <script>
+    $(document).ready(function(){
+     
+     $('#btn_login_details').click(function(){
+      
+      var error_business_address_name = '';
+      var error_business_street_address = '';  
+      var error_business_city ='';
+      var error_business_state ='';
+      var error_business_zip ='';
+      var error_business_country = '';
+      var error_business_street_address_new = '';
+      
+      if($.trim($('#business_address_name').val()).length == 0)
+      {
+       error_business_address_name = 'First Name is required';
+       $('#error_business_address_name').text(error_business_address_name);
+       $('#business_address_name').addClass('has-error');
+      }
+      else
+      {
+       error_business_address_name = '';
+       $('#error_business_address_name').text(error_business_address_name);
+       $('#business_address_name').removeClass('has-error');
+      }
+    
+      
+      if($.trim($('#business_street_address').val()).length == 0)
+      {
+       error_business_street_address = 'First Name is required';
+       $('#error_business_street_address').text(error_business_street_address);
+       $('#business_street_address').addClass('has-error');
+      }
+      else
+      {
+       error_business_street_address = '';
+       $('#error_business_street_address').text(error_business_street_address);
+       $('#business_street_address').removeClass('has-error');
+      }
+    
+      
+      if($.trim($('#business_city').val()).length == 0)
+      {
+       error_business_city = 'business_city is required';
+       $('#error_business_city').text(error_business_street_address);
+       $('#business_city').addClass('has-error');
+      }
+      else
+      {
+       error_business_street_address = '';
+       $('#error_business_city').text(error_business_street_address);
+       $('#business_city').removeClass('has-error');
+      }
+    
+      if($.trim($('#business_state').val()).length == 0)
+      {
+       error_business_state = 'business_state is required';
+       $('#error_business_state').text(error_business_state);
+       $('#business_state').addClass('has-error');
+      }
+      else
+      {
+       error_business_state = '';
+       $('#error_business_state').text(error_business_state);
+       $('#business_state').removeClass('has-error');
+      }
+    
+      if($.trim($('#business_zip').val()).length == 0)
+      {
+       error_business_zip = 'business_zip is required';
+       $('#error_business_zip').text(error_business_zip);
+       $('#business_zip').addClass('has-error');
+      }
+      else
+      {
+       error_business_street_address = '';
+       $('#error_business_zip').text(error_business_zip);
+       $('#business_zip').removeClass('has-error');
+      }
+    
+      if($.trim($('#business_country').val()).length == 0)
+      {
+       error_business_country = 'business_country is required';
+       $('#error_business_country').text(error_business_country);
+       $('#business_country').addClass('has-error');
+      }
+      else
+      {
+       error_business_country = '';
+       $('#error_business_country').text(error_business_country);
+       $('#business_country').removeClass('has-error');
+      }
+      
+      if($.trim($('#business_street_address_new').val()).length == 0)
+      {
+       error_business_street_address_new = 'business_street_address_new is required';
+       $('#error_business_street_address_new').text(error_business_country);
+       $('#business_street_address_new').addClass('has-error');
+      }
+      else
+      {
+       error_business_street_address_new = '';
+       $('#error_business_street_address_new').text(error_business_street_address_new);
+       $('#business_street_address_new').removeClass('has-error');
+      }
+    
+      if(error_business_address_name != '' || error_business_street_address != '' || error_business_city != ''|| error_business_state != ''|| error_business_zip != ''|| error_business_country != ''|| error_business_street_address_new != '')
+      {
+       return false;
+      }
+      else
+      {
+       $('#list_login_details').removeClass('active active_tab1');
+       $('#list_login_details').removeAttr('href data-toggle');
+       $('#login_details').removeClass('active');
+       $('#list_login_details').addClass('inactive_tab1');
+       $('#list_personal_details').removeClass('inactive_tab1');
+       $('#list_personal_details').addClass('active_tab1 active');
+       $('#list_personal_details').attr('href', '#personal_details');
+       $('#list_personal_details').attr('data-toggle', 'tab');
+       $('#personal_details').addClass('active in');
+      }
+     });
+     
+     $('#previous_btn_personal_details').click(function(){
+      $('#list_personal_details').removeClass('active active_tab1');
+      $('#list_personal_details').removeAttr('href data-toggle');
+      $('#personal_details').removeClass('active in');
+      $('#list_personal_details').addClass('inactive_tab1');
+      $('#list_login_details').removeClass('inactive_tab1');
+      $('#list_login_details').addClass('active_tab1 active');
+      $('#list_login_details').attr('href', '#login_details');
+      $('#list_login_details').attr('data-toggle', 'tab');
+      $('#login_details').addClass('active in');
+     });
+     
+     $('#btn_personal_details').click(function(){
+    
+        var error_business_business_type ='';
+        var error_business_naics_sector ='';
+        var error_business_naics_category ='';
+        var error_business_classification ='';
+        var error_business_time_zone ='';
+      
+      if($.trim($('#business_business_type').val()).length == 0)
+      {
+       error_business_business_type = 'business_business_type name is required';
+       $('#error_business_business_type').text(error_business_business_type);
+       $('#business_business_type').addClass('has-error');
+      }
+      else
+      {
+       error_business_business_type = '';
+       $('#error_business_business_type').text(error_business_business_type);
+       $('#business_business_type').removeClass('has-error');
+      }
+      
+      if($.trim($('#business_naics_category').val()).length == 0)
+      {
+       error_business_naics_category = 'business_naics_category name is required';
+       $('#error_business_naics_category').text(error_business_naics_category);
+       $('#business_naics_category').addClass('has-error');
+      }
+      else
+      {
+       error_business_naics_category = '';
+       $('#error_business_naics_category').text(error_business_naics_category);
+       $('#business_naics_category').removeClass('has-error');
+      }
+          
+      if($.trim($('#business_classification').val()).length == 0)
+      {
+       error_business_classification = 'business_classification name is required';
+       $('#error_business_classification').text(error_business_classification);
+       $('#business_classification').addClass('has-error');
+      }
+      else
+      {
+       error_business_classification = '';
+       $('#error_business_classification').text(error_business_classification);
+       $('#business_classification').removeClass('has-error');
+      }
+                
+    
+                
+      if($.trim($('#business_time_zone').val()).length == 0)
+      {
+       error_business_time_zone = 'business_time_zone name is required';
+       $('#error_business_time_zone').text(error_business_time_zone);
+       $('#business_time_zone').addClass('has-error');
+      }
+      else
+      {
+       error_business_time_zone = '';
+       $('#error_business_time_zone').text(error_business_time_zone);
+       $('#business_time_zone').removeClass('has-error');
+      }
+    
+      if(error_business_business_type != '' || error_business_naics_sector != '' || error_business_naics_category != '' || error_business_classification != '' || error_business_time_zone != '')
+      {
+       return false;
+      }
+      else
+      {
+       $('#list_personal_details').removeClass('active active_tab1');
+       $('#list_personal_details').removeAttr('href data-toggle');
+       $('#personal_details').removeClass('active');
+       $('#list_personal_details').addClass('inactive_tab1');
+       $('#list_contact_details').removeClass('inactive_tab1');
+       $('#list_contact_details').addClass('active_tab1 active');
+       $('#list_contact_details').attr('href', '#contact_details');
+       $('#list_contact_details').attr('data-toggle', 'tab');
+       $('#contact_details').addClass('active in');
+      }
+     });
+     
+     $('#previous_btn_contact_details').click(function(){
+      $('#list_contact_details').removeClass('active active_tab1');
+      $('#list_contact_details').removeAttr('href data-toggle');
+      $('#contact_details').removeClass('active in');
+      $('#list_contact_details').addClass('inactive_tab1');
+      $('#list_personal_details').removeClass('inactive_tab1');
+      $('#list_personal_details').addClass('active_tab1 active');
+      $('#list_personal_details').attr('href', '#personal_details');
+      $('#list_personal_details').attr('data-toggle', 'tab');
+      $('#personal_details').addClass('active in');
+     });
+     
+     $('#btn_contact_details').click(function(){
+    
+        var error_business_first_name = '';
+        var error_business_middle_name = '';
+        var error_business_last_name = '';
+        var error_business_phone = '';
+        var error_business_email = '';
+    
+        if($.trim($('#business_first_name').val()).length == 0)
+      {
+       error_business_first_name = 'business_first_name is required';
+       $('#error_business_first_name').text(error_business_first_name);
+       $('#business_first_name').addClass('has-error');
+      }
+      else
+      {
+       error_business_first_name = '';
+       $('#error_business_first_name').text(error_business_first_name);
+       $('#business_first_name').removeClass('has-error');
+      }
+    
+        if($.trim($('#business_middle_name').val()).length == 0)
+      {
+       error_business_middle_name = 'business_middle_name is required';
+       $('#error_business_middle_name').text(error_business_middle_name);
+       $('#business_middle_name').addClass('has-error');
+      }
+      else
+      {
+       error_business_middle_name = '';
+       $('#error_business_middle_name').text(error_business_middle_name);
+       $('#business_middle_name').removeClass('has-error');
+      }
+    
+        if($.trim($('#business_last_name').val()).length == 0)
+      {
+       error_business_last_name = 'business_last_name is required';
+       $('#error_business_last_name').text(error_business_last_name);
+       $('#business_last_name').addClass('has-error');
+      }
+      else
+      {
+       error_business_last_name = '';
+       $('#error_business_last_name').text(error_business_last_name);
+       $('#business_last_name').removeClass('has-error');
+      }
+    
+        if($.trim($('#business_phone').val()).length == 0)
+      {
+       error_business_phone = 'business_phone is required';
+       $('#error_business_phone').text(error_business_phone);
+       $('#business_phone').addClass('has-error');
+      }
+      else
+      {
+       error_address = '';
+       $('#error_business_phone').text(error_business_phone);
+       $('#business_phone').removeClass('has-error');
+      }
+    
+        if($.trim($('#business_email').val()).length == 0)
+      {
+       error_business_email = 'business_email is required';
+       $('#error_business_email').text(error_address);
+       $('#business_email').addClass('has-error');
+      }
+      else
+      {
+       error_business_email = '';
+       $('#error_business_email').text(error_business_email);
+       $('#business_email').removeClass('has-error');
+      }
+     
+      if(error_business_first_name != '' || error_business_middle_name != '' || error_business_last_name != '' || error_business_phone != '' || error_business_email != '')
+      {
+       return false;
+      }
+      else
+      {
+       $('#list_contact_details').removeClass('active active_tab1');
+       $('#list_contact_details').removeAttr('href data-toggle');
+       $('#contact_details').removeClass('active');
+       $('#list_contact_details').addClass('inactive_tab1');
+       $('#list_login_details_test').removeClass('inactive_tab1');
+       $('#list_login_details_test').addClass('active_tab1 active');
+       $('#list_login_details_test').attr('href', '#login_details_test');
+       $('#list_login_details_test').attr('data-toggle', 'tab');
+       $('#login_details_test').addClass('active in');
+      }
+      
+     });
+    
+    ////////////////working on
+    $('#btn_login_details_test').click(function(){
+      
+      var error_business_address_name = '';
+      var error_business_street_address = '';  
+      var error_business_city ='';
+      var error_business_state ='';
+      var error_business_zip ='';
+      var error_business_country = '';
+      var error_business_street_address_new = '';
+      
+      if($.trim($('#business_address_name').val()).length == 0)
+      {
+       error_business_address_name = 'First Name is required';
+       $('#error_business_address_name').text(error_business_address_name);
+       $('#business_address_name').addClass('has-error');
+      }
+      else
+      {
+       error_business_address_name = '';
+       $('#error_business_address_name').text(error_business_address_name);
+       $('#business_address_name').removeClass('has-error');
+      }
+    
+      
+      if($.trim($('#business_street_address').val()).length == 0)
+      {
+       error_business_street_address = 'First Name is required';
+       $('#error_business_street_address').text(error_business_street_address);
+       $('#business_street_address').addClass('has-error');
+      }
+      else
+      {
+       error_business_street_address = '';
+       $('#error_business_street_address').text(error_business_street_address);
+       $('#business_street_address').removeClass('has-error');
+      }
+    
+      
+      if($.trim($('#business_city').val()).length == 0)
+      {
+       error_business_city = 'business_city is required';
+       $('#error_business_city').text(error_business_street_address);
+       $('#business_city').addClass('has-error');
+      }
+      else
+      {
+       error_business_street_address = '';
+       $('#error_business_city').text(error_business_street_address);
+       $('#business_city').removeClass('has-error');
+      }
+    
+      if($.trim($('#business_state').val()).length == 0)
+      {
+       error_business_state = 'business_state is required';
+       $('#error_business_state').text(error_business_state);
+       $('#business_state').addClass('has-error');
+      }
+      else
+      {
+       error_business_state = '';
+       $('#error_business_state').text(error_business_state);
+       $('#business_state').removeClass('has-error');
+      }
+    
+      if($.trim($('#business_zip').val()).length == 0)
+      {
+       error_business_zip = 'business_zip is required';
+       $('#error_business_zip').text(error_business_zip);
+       $('#business_zip').addClass('has-error');
+      }
+      else
+      {
+       error_business_street_address = '';
+       $('#error_business_zip').text(error_business_zip);
+       $('#business_zip').removeClass('has-error');
+      }
+    
+      if($.trim($('#business_country').val()).length == 0)
+      {
+       error_business_country = 'business_country is required';
+       $('#error_business_country').text(error_business_country);
+       $('#business_country').addClass('has-error');
+      }
+      else
+      {
+       error_business_country = '';
+       $('#error_business_country').text(error_business_country);
+       $('#business_country').removeClass('has-error');
+      }
+      
+      if($.trim($('#business_street_address_new').val()).length == 0)
+      {
+       error_business_street_address_new = 'business_street_address_new is required';
+       $('#error_business_street_address_new').text(error_business_country);
+       $('#business_street_address_new').addClass('has-error');
+      }
+      else
+      {
+       error_business_street_address_new = '';
+       $('#error_business_street_address_new').text(error_business_street_address_new);
+       $('#business_street_address_new').removeClass('has-error');
+      }
+    
+      if(error_business_address_name != '' || error_business_street_address != '' || error_business_city != ''|| error_business_state != ''|| error_business_zip != ''|| error_business_country != ''|| error_business_street_address_new != '')
+      {
+       return false;
+      }
+      else
+      {
+       $('#list_login_details_test').removeClass('active active_tab1');
+       $('#list_login_details_test').removeAttr('href data-toggle');
+       $('#login_details_test').removeClass('active');
+       $('#list_login_details_test').addClass('inactive_tab1');
+       $('#list_personal_details_test').removeClass('inactive_tab1');
+       $('#list_personal_details_test').addClass('active_tab1 active');
+       $('#list_personal_details_test').attr('href', '#personal_details_test');
+       $('#list_personal_details_test').attr('data-toggle', 'tab');
+       $('#personal_details_test').addClass('active in');
+      }
+     });
+     
+     $('#previous_btn_personal_details_test').click(function(){
+      $('#list_personal_details_test').removeClass('active active_tab1');
+      $('#list_personal_details_test').removeAttr('href data-toggle');
+      $('#personal_details_test').removeClass('active in');
+      $('#list_personal_details_test').addClass('inactive_tab1');
+      $('#list_login_details_test').removeClass('inactive_tab1');
+      $('#list_login_details_test').addClass('active_tab1 active');
+      $('#list_login_details_test').attr('href', '#login_details_test');
+      $('#list_login_details_test').attr('data-toggle', 'tab');
+      $('#login_details_test').addClass('active in');
+     });
+     
+     $('#btn_personal_details_test').click(function(){
+    
+        var error_business_business_type ='';
+        var error_business_naics_sector ='';
+        var error_business_naics_category ='';
+        var error_business_classification ='';
+        var error_business_time_zone ='';
+      
+      if($.trim($('#business_business_type').val()).length == 0)
+      {
+       error_business_business_type = 'business_business_type name is required';
+       $('#error_business_business_type').text(error_business_business_type);
+       $('#business_business_type').addClass('has-error');
+      }
+      else
+      {
+       error_business_business_type = '';
+       $('#error_business_business_type').text(error_business_business_type);
+       $('#business_business_type').removeClass('has-error');
+      }
+      
+      if($.trim($('#business_naics_category').val()).length == 0)
+      {
+       error_business_naics_category = 'business_naics_category name is required';
+       $('#error_business_naics_category').text(error_business_naics_category);
+       $('#business_naics_category').addClass('has-error');
+      }
+      else
+      {
+       error_business_naics_category = '';
+       $('#error_business_naics_category').text(error_business_naics_category);
+       $('#business_naics_category').removeClass('has-error');
+      }
+          
+      if($.trim($('#business_classification').val()).length == 0)
+      {
+       error_business_classification = 'business_classification name is required';
+       $('#error_business_classification').text(error_business_classification);
+       $('#business_classification').addClass('has-error');
+      }
+      else
+      {
+       error_business_classification = '';
+       $('#error_business_classification').text(error_business_classification);
+       $('#business_classification').removeClass('has-error');
+      }
+                
+    
+                
+      if($.trim($('#business_time_zone').val()).length == 0)
+      {
+       error_business_time_zone = 'business_time_zone name is required';
+       $('#error_business_time_zone').text(error_business_time_zone);
+       $('#business_time_zone').addClass('has-error');
+      }
+      else
+      {
+       error_business_time_zone = '';
+       $('#error_business_time_zone').text(error_business_time_zone);
+       $('#business_time_zone').removeClass('has-error');
+      }
+    
+      if(error_business_business_type != '' || error_business_naics_sector != '' || error_business_naics_category != '' || error_business_classification != '' || error_business_time_zone != '')
+      {
+       return false;
+      }
+      else
+      {
+       $('#list_personal_details_test').removeClass('active active_tab1');
+       $('#list_personal_details_test').removeAttr('href data-toggle');
+       $('#personal_details_test').removeClass('active');
+       $('#list_personal_details_test').addClass('inactive_tab1');
+       $('#list_contact_details_test').removeClass('inactive_tab1');
+       $('#list_contact_details_test').addClass('active_tab1 active');
+       $('#list_contact_details_test').attr('href', '#contact_details_test');
+       $('#list_contact_details_test').attr('data-toggle', 'tab');
+       $('#contact_details_test').addClass('active in');
+      }
+     });
+     
+     $('#previous_btn_contact_details_test').click(function(){
+      $('#list_contact_details_test').removeClass('active active_tab1');
+      $('#list_contact_details_test').removeAttr('href data-toggle');
+      $('#contact_details_test').removeClass('active in');
+      $('#list_contact_details_test').addClass('inactive_tab1');
+      $('#list_personal_details_test').removeClass('inactive_tab1');
+      $('#list_personal_details_test').addClass('active_tab1 active');
+      $('#list_personal_details_test').attr('href', '#personal_details_test');
+      $('#list_personal_details_test').attr('data-toggle', 'tab');
+      $('#personal_details_test').addClass('active in');
+     });
+     
+     $('#btn_contact_details_test').click(function(){
+    
+        var error_business_first_name = '';
+        var error_business_middle_name = '';
+        var error_business_last_name = '';
+        var error_business_phone = '';
+        var error_business_email = '';
+    
+        if($.trim($('#business_first_name').val()).length == 0)
+      {
+       error_business_first_name = 'business_first_name is required';
+       $('#error_business_first_name').text(error_business_first_name);
+       $('#business_first_name').addClass('has-error');
+      }
+      else
+      {
+       error_business_first_name = '';
+       $('#error_business_first_name').text(error_business_first_name);
+       $('#business_first_name').removeClass('has-error');
+      }
+    
+        if($.trim($('#business_middle_name').val()).length == 0)
+      {
+       error_business_middle_name = 'business_middle_name is required';
+       $('#error_business_middle_name').text(error_business_middle_name);
+       $('#business_middle_name').addClass('has-error');
+      }
+      else
+      {
+       error_business_middle_name = '';
+       $('#error_business_middle_name').text(error_business_middle_name);
+       $('#business_middle_name').removeClass('has-error');
+      }
+    
+        if($.trim($('#business_last_name').val()).length == 0)
+      {
+       error_business_last_name = 'business_last_name is required';
+       $('#error_business_last_name').text(error_business_last_name);
+       $('#business_last_name').addClass('has-error');
+      }
+      else
+      {
+       error_business_last_name = '';
+       $('#error_business_last_name').text(error_business_last_name);
+       $('#business_last_name').removeClass('has-error');
+      }
+    
+        if($.trim($('#business_phone').val()).length == 0)
+      {
+       error_business_phone = 'business_phone is required';
+       $('#error_business_phone').text(error_business_phone);
+       $('#business_phone').addClass('has-error');
+      }
+      else
+      {
+       error_address = '';
+       $('#error_business_phone').text(error_business_phone);
+       $('#business_phone').removeClass('has-error');
+      }
+    
+        if($.trim($('#business_email').val()).length == 0)
+      {
+       error_business_email = 'business_email is required';
+       $('#error_business_email').text(error_address);
+       $('#business_email').addClass('has-error');
+      }
+      else
+      {
+       error_business_email = '';
+       $('#error_business_email').text(error_business_email);
+       $('#business_email').removeClass('has-error');
+      }
+     
+      if(error_business_first_name != '' || error_business_middle_name != '' || error_business_last_name != '' || error_business_phone != '' || error_business_email != '')
+      {
+       return false;
+      }
+      else
+      {
+       $('#btn_contact_details').attr("disabled", "disabled");
+       $(document).css('cursor', 'prgress');
+       $("#register_form").submit();
+      }
+      
+     });
+    
+
+
+
+    //working on
+     
+    });
+    </script>
